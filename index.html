@@ -1,69 +1,208 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>webSSO.github.com by webSSO</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>webSSO.github.com by webSSO</title>
+<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="javascripts/main.js"></script>
+<!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, user-scalable=no">
 
-  </head>
-  <body>
+</head>
+<body>
+  <header>
+    <img src="images/webSSO.svg" />
+  </header>
 
-      <header>
-        <h1>webSSO.github.com</h1>
-        <p></p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/webSSO" class="button fork"><strong>View On GitHub</strong></a>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
-      </footer>
+  <div id="banner">
+    <span id="logo"></span>
+    <div>
+      <a href="https://raw.github.com/webSSO/internetDraft/master/README"
+         class="button"><strong>Internet Draft</strong></a>
+      <a href="https://groups.google.com/forum/?fromgroups#!forum/websso"
+         class="button"><strong>Google Group</strong></a>
+      <a href="https://groups.google.com/forum/?fromgroups#!forum/websso"
+         class="button"><strong>Presentation</strong></a>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
-    
-  </body>
+  </div>
+  <!-- end banner -->
+
+  <div class="wrapper">
+    <nav>
+      <ul>
+        <li><a href="#why">WebSSO's Motivation</a></li>
+        <li><a href="#ux">User Experience</a></li>
+        <li><a href="#how">Under the Covers</a></li>
+        <li><a href="#identities">Globally Unique Identities</a></li>
+        <li><a href="#protocols">Crossing Enterprise Boundaries</a></li>
+        <li><a href="#delegation">Secure Credential Delegation</a></li>
+      </ul>
+    </nav>
+    <section>
+      <p>WebSSO is a new cloud-centric, federated authentication system
+         developed to solve the problems of deploying authentication across
+         heterogeneous infrastructures. It is a thin policy layer on top of
+         widely deployed and trusted protocols such as HTTPS and TLS client
+         certificate authentication. It provides:</p>
+      <ul>
+        <li>Single sign-on across local, Internet and cloud
+            infrastructures</li>
+        <li>Globally unique identities via existing certificate
+            authorities</li>
+        <li>Decentralized authentication</li>
+        <li>Credential delegation</li>
+        <li>Depoyment on existing HTTPS stacks</li>
+        <li>Multi-protocol support (i.e. not restricted to HTTP)</li>
+        <li>Cryptographic trust validation of all parties</li>
+      </ul>
+      
+      <h3 id="why">WebSSO's Motivation</h3>
+      <p>It is true, there are lots of authentication protocols available.
+         Kerberos, for instance, is a widely deployed, mature protocol for
+         local infrastructure. However, it has almost no Internet presence,
+         mostly because identity providers are not willing to expose their
+         Kerberos servers to the Internet. Kerberos also competes in the
+         encryption space with SSL/TLS, the hands down winner in the
+         web-enabled world. Lastly, Kerberos has difficulty scaling in large,
+         flat topologies.</p>
+         
+      <p>Outside of the enterprise context, OpenID has a large presence on the
+         Internet. As one of the first attempts at creating a federated
+         identity system in the Internet, it has accomplished remarkable things.
+         However, OpenID doesn't do single sign-on. Nor does it validate all
+         parties in the authentication transaction, leading to <a
+         href="http://en.wikipedia.org/wiki/OpenID#Security">problems with
+         security/phishing</a>. When combined with OAuth, OpenID can perform
+         credential delegation. But implementing these protocols is quite
+         complex, leading to bugs that compromise security. OpenID is also
+         tightly tied with the web-based world and has gained no traction
+         outside this environment.</p>
+         
+      <p>The true problem arises when the local infrastructure and Internet
+         worlds meet. If you want to use your enterprise identity on the
+         Internet or in a cloud service, you're pretty much out of luck. The
+         same is mostly true with using your Internet identity in the
+         enterprise. Thus, webSSO came about as we began to envision a world
+         where there was no division between local, Internet and cloud
+         infrastructures.</p>
+      
+      <h3 id="ux">User Experience</h3>
+      <p>When a user first encounters a webSSO Protected Resource, he or she
+         will be prompted to log in. In this case, the user has not acquired
+         any identities and the Protected Resource has suggested that the user
+         can use Facebook or Yahoo! to log in.</p>
+      <img src="images/workflow1.png" />
+      
+      <p>Since the user wants to use his own webSSO identity, he types in his
+         user ID and domain and clicks add. The client will look up this user's
+         webSSO server and attempt to login:</p>
+      <img src="images/workflow2.png" />
+      
+      <p>Once the user has established his/her webSSO identity, it can be used
+         for subsequent logins without entering credentials again:</p>
+      <img src="images/workflow3.png" />
+      
+      <p>WebSSO can also be used in conjunction with traditional X.509
+         certificates:</p>
+      <img src="images/workflow4.png" />
+      
+      <p>When a Protected Resource desires to acquire data from another
+         Protected Resource, it can prompt the user to grant it access:</p>
+      <img src="images/workflow5.png" />   
+      
+      <h3 id="how">Under the Covers</h3>
+      <p>A typical authentication system looks something like this:</p>
+      <img src="images/typical.png" />
+      <p>SSL/TLS client certificate authentication provides a unique feature in
+         that the Authentication Service (which issues the certificate) and the
+         Protected Resource do not need to communicate. This permits the
+         Authentication Service to live behind a firewall. The downside is that
+         the process for obtaining a certificate has typically been manual and
+         error prone:</p>
+      <img src="images/tls.png" />
+      
+      <p>WebSSO is a simple policy layer on top of SSL/TLS client certificate
+         authentication. When connecting to a SSL/TLS-encrypted resource, the
+         resource can ask you to authenticate by providing a certificate. In
+         a traditional TLS transaction, if you don't have a certificate the
+         operation simply fails. However, in the webSSO case, if you do not
+         have an appropriate certificate, you can simply use webSSO to obtain
+         one:</p>
+      <img src="images/overview.png" />
+      
+      <p>The end result is that we get the benefit of TLS authentication
+         without the drawback of the manual process:</p>
+      <img src="images/webSSO.png" />
+         
+      <h3 id="identities">Globally Unique Identities</h3>
+      <p>WebSSO can provide private trust relationships via manual certificate
+         exchange. But one of the more interesting features of WebSSO is its
+         ability to provide globally unique identities. This works by utilizing
+         the pre-existing system of public X.509 certificate authorities to
+         validate domain ownership. For instance, if you want to bring up a
+         secure website on example.com, you will need to obtain a certificate
+         from a trusted certificate authority. This authority will verify that
+         you are the proper owner of your domain and issue you a certificate
+         vouching for this.</p>
+         
+      <img src="images/certificates.png"/>
+      <p>WebSSO is really no different. If you want to bring up an
+         Authentication Service, you obtain a certificate from an authority
+         proving your domain (example.com). This permits you to issue user
+         certificates for user@example.com.</p>
+      
+      <h3 id="protocols">Crossing Enterprise Boundaries</h3>
+      <p>In webSSO, authentication is provided at the SSL/TLS encryption
+         channel layer. This means that webSSO can be used wherever SSL/TLS
+         encryption is used to protect a connection. This feature is what
+         permits webSSO to work transparently across local, Internet and cloud
+         infrastructures. For instance, you can use the same identity to log in
+         to your local print and file shares, web sites such as Facebook and
+         Google, and privately contracted cloud services such as HR or
+         virtualization.</p>
+         
+      <p>However, many organizations are unwilling (for good reason) to expose
+         their Authentication Service to the Internet. WebSSO was designed
+         precisely for this scenario. Since webSSO does not require any contact
+         between the Authentication Service and the Protected Resources to whom
+         authentication will be provided, you can safely host your webSSO server
+         behind the corporate firewall and still permit the use of corporate
+         identities in the public Internet.</p>
+         
+      <h3 id="delegation">Secure Credential Delegation</h3>
+      <p>Sharing data between services has become a critical feature of today's
+         modern web services. Yet most attempts at authentication when sharing
+         data have been handled by proprietary mechanisms or, more recently,
+         the OAuth protocol. In both cases this has been restricted to HTTP-
+         only services. Existing forms of delegation have also created an
+         atmosphere where sharing is unbounded and requires the sharing of
+         passwords.</p>
+         
+      <p>WebSSO aims to provide an authentication delegation system which:</p>
+      <ul>
+        <li>Works across any protocol</li>
+        <li>Permits cryptographic trust validation of every party involved</li>
+        <li>Enforces time limits on all delegation grants</li>
+        <li>Does not require the exchange of passwords</li>
+      </ul>
+      <img src="images/delegation.png"/>
+         
+    </section>
+    <footer>
+      <p>
+        <small>Hosted on GitHub Pages - Theme by
+        <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small>
+      </p>
+    </footer>
+  </div>
+  <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+
+</body>
 </html>

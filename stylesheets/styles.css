@@ -708,6 +708,7 @@ header p {
   border-radius: 0px 2px 2px 0px;
   padding-right: 10px;
 }
+
 #banner .button {
   border: 1px solid #dba500;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffe788), color-stop(100%, #ffce38));
@@ -746,6 +747,14 @@ header p {
   background: linear-gradient(#ffe788, #ffe788);
   background-color: #ffeca0;
 }
+
+#banner div {
+  position: fixed;
+  left: 50%;
+  margin-left: -325px;
+  padding: 0px 12px;
+}
+
 #banner .fork {
   position: fixed;
   left: 50%;
