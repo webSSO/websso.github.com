@@ -43,6 +43,7 @@
         <li><a href="#identities">Globally Unique Identities</a></li>
         <li><a href="#protocols">Crossing Enterprise Boundaries</a></li>
         <li><a href="#delegation">Secure Credential Delegation</a></li>
+        <li><a href="#compare">Protocols Compared</a></li>
       </ul>
     </nav>
     <section>
@@ -194,7 +195,87 @@
         <li>Does not require the exchange of passwords</li>
       </ul>
       <img src="images/delegation.png"/>
-         
+      
+      <h3 id="compare">Protocols Compared</h3>
+      <table>
+        <tr>
+          <td></td>
+          <td>Traditional X.509</td>
+          <td>webSSO</td>
+          <td>Browserauth</td>
+          <td>BrowserID</td>
+        </tr>
+        <tr>
+          <td>Deployment</td>
+          <td>Configuration</td>
+          <td>Configuration</td>
+          <td>Custom code</td>
+          <td>Custom code</td>
+        </tr>
+        <tr>
+          <td>Federation</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Single Sign On</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>HTTP-only</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Globally Unique Users</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes (via email)</td>
+        </tr>
+        <tr>
+          <td>Dynamic Trust Management</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Private AS</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Delegation</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Browser Changes</td>
+          <td>No</td>
+          <td>Minor</td>
+          <td>Minor</td>
+          <td>Crypto</td>
+        </tr>
+        <tr>
+          <td>Server Changes</td>
+          <td>None</td>
+          <td>Optional extended validations</td>
+          <td>Application changes</td>
+          <td>Application changes</td>
+        </tr>
+      </table>
     </section>
     <footer>
       <p>
